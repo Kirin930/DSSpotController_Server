@@ -1,0 +1,9 @@
+alembic
+fastapi
+uvicorn[standard]
+sqlalchemy
+apscheduler
+python-multipart
+psycopg[binary]
+httpx
+pytest

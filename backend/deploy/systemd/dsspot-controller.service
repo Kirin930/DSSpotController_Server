@@ -1,0 +1,18 @@
+[Unit]
+Description=Distributed Spot Controller Main Web Server
+After=network.target
+
+[Service]
+Type=simple
+User=spotcontroller
+Group=spotcontroller
+WorkingDirectory=/opt/distributed-spot-controller/DSSpotController_Server/backend
+EnvironmentFile=-/opt/distributed-spot-controller/DSSpotController_Server/backend/.env
+ExecStart=/opt/distributed-spot-controller/DSSpotController_Server/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+Restart=always
+RestartSec=5
+TimeoutStopSec=20
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+/var/log/dsspot-controller/*.log {
+    daily
+    rotate 14
+    compress
+    delaycompress
+    missingok
+    notifempty
+    copytruncate
+    su spotcontroller spotcontroller
+}
